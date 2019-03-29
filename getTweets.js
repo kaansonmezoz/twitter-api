@@ -68,7 +68,7 @@ const downloadTweet = (tweetId) => request('https://www.twitter.com/CMYLMZ/statu
 
     extractedTweet = extractTweet(body);
 
-    fileSystem.appendFileSync('./2016-panamapapers.txt', JSON.stringify({
+    fileSystem.appendFileSync('./tweets/2016-panamapapers.txt', JSON.stringify({
         id: tweetId,
         tweet: extractedTweet.tweet,
         username: extractedTweet.username,
@@ -83,7 +83,7 @@ const downloadTweet = (tweetId) => request('https://www.twitter.com/CMYLMZ/statu
 
 
 
-fileSystem.readFile("./2016-panamapapers.ids", "utf8",(err, data) => {
+fileSystem.readFile("./tweet-ids/2016-panamapapers.ids", "utf8",(err, data) => {
     if(err){
         console.log("Error has been occurred: " + err.message);
         return;
